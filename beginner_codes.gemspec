@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'beginner.codes'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.summary     = 'This is the un-official RubyGem for the Beginner.Codes Discord server.'
   s.description = 'Test your daily challenge solutions with provided tests automatically to ensure you have a good solution.'
   s.authors     = ['Mr. Robinhood 5','Zech Zimmerman']
@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
     "source_code_uri" => "https://github.com/mrrobinhood5/beginner.codes/tree/master/lib",
   }
   s.email       = 'mrrobinhood5@gmail.com'
-  s.files       = %w[lib/challenges.rb README.md.md]
+  s.files       = %w[lib/challenges.rb README.md CHANGELOG.md]
   s.license     = 'MIT'
   s.required_ruby_version     = ">= 3.2.2"
-  s.required_rubygems_version = ">= 3.3.5"
+  s.required_rubygems_version = ">= 3.4.10"
 end
