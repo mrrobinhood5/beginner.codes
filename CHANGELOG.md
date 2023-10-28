@@ -1,3 +1,20 @@
+# 0.1.2 (27 October 2023)
+
+---
+
+## Enhancements
+
+## Bug Fixes
+
+- `.equal?` is not the same as `.eql?` ladies and gentlemen. Lessons learned. `equal?` compares for the same object in memory. `eql?` compares the *values* of both objects. Silly rabbit.
+## Performance
+
+## Documentation
+
+- Updated the description to re-iterate its for a specific Discord server. Its public. Go check it out! Beginner.Codes
+
+---
+
 # 0.1.1 (27 October 2023)
 
 ---

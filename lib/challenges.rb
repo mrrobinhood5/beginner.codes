@@ -46,7 +46,7 @@ def run_tests(tests, solution_func)
       result.status = Status::EXCEPTION
       result.got = e
     else
-      result.status = Status::FAILED unless result.got.equal?(test_case['return'])
+      result.status = Status::FAILED unless result.got.eql?(test_case['return'])
     end
     results << result
   end
