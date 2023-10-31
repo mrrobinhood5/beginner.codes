@@ -15,6 +15,6 @@ def n_differences(nums)
 end  # Your code goes here!!!
 
 
-test(458, n_differences)
+test(458, :n_differences)
 ```
 This will handle downloading the necessary challenge test cases and will run them against your code. It will show you which tests failed, what went wrong, and how many tests succeeded.
