@@ -1,3 +1,22 @@
+# 0.1.3 (1 November 2023)
+
+---
+
+## Enhancements
+
+- Added some colors via the 'colorize' gem to make it a little more clear what the expected and received answers were.
+
+## Bug Fixes
+
+## Performance
+
+## Documentation
+
+- Added comments to make code 10.25% more helpful
+- Sometimes I feel I've got to <> <> run away.. I've got to <> <> get away..
+
+---
+
 # 0.1.2 (27 October 2023)
 
 ---

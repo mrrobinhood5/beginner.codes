@@ -3,8 +3,8 @@
 require 'json'
 require 'uri'
 require 'net/http'
+require 'colorize'
 
-# this gets imported to your file
 
 module Status
   SUCCESS = 1
@@ -25,10 +25,9 @@ class Result
   end
 end
 
-
+# fetches the result from the source
 def get_tests(challenge)
   uri = URI("https://raw.githubusercontent.com/beginner-codes/challenges/main/weekday/test_cases_#{challenge}.json")
-  # uri = URI("https://raw.githubusercontent.com/beginner-codes/challenges/bfb59fe9fbec461a33cc80b20d1d976e9095853c/weekday/test_cases_#{challenge}.json")
   response = Net::HTTP.get_response(uri)
   raise "Challenge #{challenge} was not found" unless response.is_a?(Net::HTTPSuccess)
 
@@ -36,6 +35,7 @@ def get_tests(challenge)
 
 end
 
+# parses your functions and checks if it passes
 def run_tests(tests, solution_func)
   results = []
   tests.each_with_index do |test_case, index|
@@ -53,11 +53,12 @@ def run_tests(tests, solution_func)
   results
 end
 
+# displays the results on the terminal
 def show_results(challenge, results, total_tests)
   failures = 0
   results.each do |result|
     if result.status.equal?(Status::FAILED)
-      puts "Test #{result.index} failed:  Expected #{result.expected}, got #{result.got}."
+      puts "Test #{result.index.to_s.blue} failed:  Expected #{result.expected.to_s.green}, got #{result.got.to_s.red}"
       failures += 1
     elsif result.status.equal?(Status::EXCEPTION)
       puts "Test #{result.index} failed:  #{result.got}"
@@ -65,11 +66,12 @@ def show_results(challenge, results, total_tests)
     end
   end
   puts ' ' if failures
-  puts "---- Challenge #{challenge} Results ----"
-  puts "#{total_tests - failures} passed, #{failures} failed"
-  puts "\n**** Great job!!! ****" if failures.zero?
+  puts "---- Challenge #{challenge} Results ----".light_yellow.on_black
+  puts "#{(total_tests - failures).to_s.green} passed, #{failures.to_s.red} failed"
+  puts "\n**** Great job!!! ****".green if failures.zero?
 end
 
+# the main entry point function
 def test(challenge, solution_func)
   tests = get_tests(challenge)
   results = run_tests(tests, solution_func)
