@@ -14,7 +14,12 @@ def n_differences(nums)
     nil
 end  # Your code goes here!!!
 
-
 test(458, :n_differences)
+
+# OR You can use a Lambda Proc
+
+n_differences = -> (x) {x*2}
+
+test(458, n_differences)
 ```
 This will handle downloading the necessary challenge test cases and will run them against your code. It will show you which tests failed, what went wrong, and how many tests succeeded.

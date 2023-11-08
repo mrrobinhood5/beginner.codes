@@ -1,3 +1,24 @@
+# 0.1.4 (7 November 2023)
+
+---
+
+## Enhancements
+
+- Added ability to process lambda functions. 
+
+## Bug Fixes
+
+## Performance
+
+- It is now .0001% faster
+
+## Documentation
+
+- Updated README to include the lambda function syntax
+- Sometimes I wonder if I'm living in a simulation. If so, why does my player always have me go into a room and forget why I went in.
+
+---
+
 # 0.1.3 (1 November 2023)
 
 ---

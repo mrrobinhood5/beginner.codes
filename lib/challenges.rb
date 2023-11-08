@@ -41,7 +41,12 @@ def run_tests(tests, solution_func)
   tests.each_with_index do |test_case, index|
     result = Result.new(index, test_case['return'])
     begin
-      result.got = send(solution_func, *test_case['args'])
+      result.got = if solution_func.is_a?(Proc)
+                     solution_func.call(*test_case['args'])
+                   else
+                     send(solution_func, *test_case['args'])
+                   end
+
     rescue StandardError => e
       result.status = Status::EXCEPTION
       result.got = e
