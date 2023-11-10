@@ -1,3 +1,22 @@
+# 0.1.5 (9 November 2023)
+
+---
+
+## Enhancements
+
+- Added two arguments passed to test `description: true` and `examples: true` to print out additional challenge data during testing
+
+## Bug Fixes
+
+## Performance
+
+## Documentation
+
+- Updated README to include the new arguments
+- Thanksgiving approaches along with the cruel realization that I never lost the weight from last new years.
+
+---
+
 # 0.1.4 (7 November 2023)
 
 ---

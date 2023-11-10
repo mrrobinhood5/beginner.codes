@@ -4,7 +4,10 @@ require 'json'
 require 'uri'
 require 'net/http'
 require 'colorize'
+require 'tty-markdown'
 
+TEST_CASE_URL = 'https://raw.githubusercontent.com/beginner-codes/challenges/main/weekday/test_cases_'
+DESCRIPTION_URL = 'https://raw.githubusercontent.com/beginner-codes/challenges/main/weekday/challenge_'
 
 module Status
   SUCCESS = 1
@@ -25,9 +28,20 @@ class Result
   end
 end
 
+# fetches the description from source
+def puts_info(challenge, description, examples)
+  url = URI(DESCRIPTION_URL + "#{challenge}.md")
+  response = Net::HTTP.get(url).force_encoding('UTF-8')
+  result = "\n"
+  result += response.split('## ').first.gsub("\n\n", "\n")+"\n" if description
+  result += response.split('#')[3].gsub("\n\n", "\n").insert(0,'#') if examples
+  result = TTY::Markdown.parse(result)
+  puts result
+end
+
 # fetches the result from the source
 def get_tests(challenge)
-  uri = URI("https://raw.githubusercontent.com/beginner-codes/challenges/main/weekday/test_cases_#{challenge}.json")
+  uri = URI(TEST_CASE_URL + "#{challenge}.json")
   response = Net::HTTP.get_response(uri)
   raise "Challenge #{challenge} was not found" unless response.is_a?(Net::HTTPSuccess)
 
@@ -77,8 +91,9 @@ def show_results(challenge, results, total_tests)
 end
 
 # the main entry point function
-def test(challenge, solution_func)
+def test(challenge, solution_func, description: false, examples: false)
   tests = get_tests(challenge)
+  puts_info(challenge, description, examples) if description || examples
   results = run_tests(tests, solution_func)
   show_results(challenge, results, tests.size)
 end
