@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'beginner.codes'
-  s.version     = '0.1.3'
+  s.version     = '0.1.5'
   s.summary     = 'This is the un-official RubyGem for the Beginner.Codes Discord server.'
   s.description = 'This is the un-official RubyGem for the Beginner.Codes Discord server. Test your daily challenge solutions with provided tests automatically to ensure you have a good solution.'
   s.authors     = ['Mr. Robinhood 5','Zech Zimmerman']
@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = '>= 3.2.2'
   s.required_rubygems_version = '>= 3.4.10'
   s.add_runtime_dependency 'colorize', '~>1.1.0'
+  s.add_runtime_dependency 'tty-markdown', '~>0.7.2'
 end
