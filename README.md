@@ -7,6 +7,7 @@ This is the un-official Ruby Gem for the Beginner.Codes Discord server.
 - Install the package: `gem install beginner.codes`
 - Import the test runner: `require 'challenges'`
 - Run the tests, passing in the challenge number and your solution function: `test(458, :n_differences)` for a function or `test(458, n_differences)` for a lambda function
+- For informatino only you can pass either `description: true` or `examples: true` 
 ```ruby
 require 'challenges'
 

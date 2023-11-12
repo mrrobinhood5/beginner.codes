@@ -1,3 +1,23 @@
+# 0.1.6 (11 November 2023)
+
+---
+
+## Enhancements
+
+- Using better colors and now tables for results
+- Prints Usage instructions if wrong arguments are sent
+- passing a function is now optional, in case you only need the test info.
+
+## Bug Fixes
+
+## Performance
+
+## Documentation
+
+- Updated README to include the new arguments
+- drip drop drip drop
+
+---
 # 0.1.5 (9 November 2023)
 
 ---
