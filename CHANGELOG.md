@@ -1,3 +1,22 @@
+# 0.1.7 (14 November 2023)
+
+---
+
+## Enhancements
+
+- Results table now displays arrays properly thanks to the `.inspect` method
+
+## Bug Fixes
+
+- Fixed a bug where the Gem completely stopped working. 
+
+## Performance
+
+## Documentation
+
+- if it aint fixed, break it
+
+---
 # 0.1.6 (11 November 2023)
 
 ---

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'beginner.codes'
-  s.version     = '0.1.6'
+  s.version     = '0.1.7'
   s.summary     = 'This is the un-official RubyGem for the Beginner.Codes Discord server.'
   s.description = 'This is the un-official RubyGem for the Beginner.Codes Discord server. Test your daily challenge solutions with provided tests automatically to ensure you have a good solution.'
   s.authors     = ['Mr. Robinhood 5','Zech Zimmerman']
